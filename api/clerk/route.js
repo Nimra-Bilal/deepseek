@@ -9,6 +9,7 @@ export async function POST(req) {
     const headerPayLoad = await headers()
     const svixHeaders = {
         "svix-id": headerPayLoad.get("svix-id"),
+        "svix-timestamp": headerPayLoad.get("svix-timestamp"),
         "svix-signature": headerPayLoad.get("svix-signature"),
     };
 
@@ -46,5 +47,5 @@ export async function POST(req) {
     }
 
     return NextRequest.json({message:"event received"});
-    
+
 }
