@@ -6,7 +6,7 @@ export const useAppContext = () =>{
     return useContext(AppContext);
 }
 export const AppContextProvider = ({children}) =>{
-    const user = useUser();
+    const {user} = useUser();
     const value = {
         user,
     }

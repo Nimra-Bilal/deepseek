@@ -29,7 +29,7 @@ export async function POST(req) {
 
     await connectDB();
 
-    switch (key) {
+    switch (type) {
         case 'user.created':
             await User.create(userData)
             break;
