@@ -56,7 +56,7 @@ import { Webhook } from "svix";
 import connectDB from "@/config/db";
 import User from "@/models/User";
 import { headers } from "next/headers";
-import { NextRequest } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req) {
   console.log("✅ Webhook triggered");
@@ -115,5 +115,5 @@ export async function POST(req) {
       break;
   }
 
-  return NextRequest.json({ message: "event received" });
+  return NextResponse.json({ message: "event received" });
 }
