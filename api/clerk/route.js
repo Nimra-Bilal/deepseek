@@ -3,7 +3,7 @@ import connectDB from "@/config/db";
 import User from "@/models/User";
 import { headers } from "next/headers";
 import { use } from "react";
-import { NextRequest } from "next/server";
+import { NextResponse } from "next/server";
 export async function POST(req) {
     const wh = new Webhook(process.env.SIGNING_SECRET)
     const headerPayLoad = await headers()
@@ -46,6 +46,6 @@ export async function POST(req) {
             break;
     }
 
-    return NextRequest.json({message:"event received"});
+    return NextResponse.json({message:"event received"});
 
 }
